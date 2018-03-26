@@ -1,11 +1,11 @@
 #' Given a environment, can be a package, returns a vector of included functions in this environment
-#' @param envir : Environment, try 'search()' to obtain a list of loaded environments
+#' @param name : Environment, try 'search()' to obtain a list of loaded environments
 #' @return Names of included functions in this environment.
 #'
 #' @export
-allFunctionEnv <- function(name, envir) {
-    if(envir == ".GlobalEnv") {
-        functions.name <- as.vector(ls.str(envir, mode = "function"))   
+allFunctionEnv <- function(name) {
+    if(name == ".GlobalEnv") {
+        functions.name <- as.vector(ls.str(name, mode = "function"))   
     } else {
         functions.name <- as.vector(ls.str(getNamespace(unlist(strsplit(name, ":"))[2]), mode = "function"))   
     }
