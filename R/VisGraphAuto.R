@@ -4,7 +4,11 @@
 #'
 #' @export
 allFunctionEnv <- function(name, envir) {
-    functions.name <- as.vector(ls.str(getNamespace(unlist(strsplit(name, ":"))[2]), mode = "function"))
+    if(envir == ".GlobalEnv") {
+        functions.name <- as.vector(ls.str(envir, mode = "function"))   
+    } else {
+        functions.name <- as.vector(ls.str(getNamespace(unlist(strsplit(name, ":"))[2]), mode = "function"))   
+    }
     return(functions.name)
 }
 
