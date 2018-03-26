@@ -5,7 +5,7 @@
 Package is actually only available on github : 
 
 ````
-devtools::install_github("datastorm-open/DependenciesGraphs")
+devtools::install_github("almeidaxan/DependenciesGraphs")
 ````
 
 ##Usage
